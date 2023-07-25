@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new222/services/api.dart';
+import 'package:new222/screens/secondPage.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = '/';
@@ -12,13 +12,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    getUser(10).then(
-      (value) => print('hello'),
-    );
     return Scaffold(
       body: Center(
-        child: Text('12345'),
-      ),
+          child: TextButton(
+        onPressed: () {
+          Navigator.pushNamed(context, SecondPage.routeName);
+        },
+        child: Text('NextPage'),
+      )),
     );
   }
 }
